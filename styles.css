@@ -1586,3 +1586,76 @@ section {
     }
 }
 
+
+/* TAM GENİŞLİK KART */
+.full-width-card {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+    min-height: 320px;
+}
+
+/* Görseli büyüt */
+.full-width-card .service-image {
+    height: 100%;
+}
+
+.full-width-card .service-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* İçerik */
+.full-width-card .subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+/* Listeyi kart stiline uydur */
+.full-width-card ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.full-width-card ul li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/* Hover uyumu */
+.full-width-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* MOBİL */
+@media (max-width: 768px) {
+    .full-width-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+.full-width-text {
+    display: block;
+}
+
+.full-width-text .service-detail-content {
+    width: 100%;
+    max-width: 100%;
+}
+
+.full-width-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.full-width-text .service-intro {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 100%;
+}
+
+
