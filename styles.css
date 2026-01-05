@@ -1636,6 +1636,10 @@ section {
     .full-width-card {
         grid-template-columns: 1fr;
     }
+    .info-card ul li::before {
+        content: "🌸"; 
+   
+    }
 }
 
 .full-width-text {
@@ -1658,13 +1662,13 @@ section {
     max-width: 100%;
 }
 .info-card ul {
-    list-style: none; /* klasik noktalardan kurtul */
+    list-style: none; 
     padding-left: 0;
 }
 
 .info-card ul li {
     position: relative;
-    padding-left: 25px; /* ikon için boşluk */
+    padding-left: 25px; 
     margin-bottom: 8px;
 }
 
