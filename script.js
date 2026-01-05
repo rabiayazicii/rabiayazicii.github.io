@@ -151,20 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Service card toggle only for mobile
+
 const serviceCards = document.querySelectorAll('.service-card');
 
 serviceCards.forEach(card => {
     const hoverDesc = card.querySelector('.hover-description');
 
     if (hoverDesc) {
-        // Başlangıçta mobilde gizle
+     
         if (window.innerWidth < 768) {
             hoverDesc.style.display = 'none';
         }
 
         card.addEventListener('click', () => {
-            // Sadece mobilde toggle uygula
+         
             if (window.innerWidth < 768) {
                 if (hoverDesc.style.display === 'none' || hoverDesc.style.display === '') {
                     hoverDesc.style.display = 'block';
@@ -176,15 +176,14 @@ serviceCards.forEach(card => {
     }
 });
 
-// Opsiyonel: ekran boyutu değişirse hover-description durumunu resetle
 window.addEventListener('resize', () => {
     serviceCards.forEach(card => {
         const hoverDesc = card.querySelector('.hover-description');
         if (hoverDesc) {
             if (window.innerWidth >= 768) {
-                hoverDesc.style.display = ''; // CSS hover kontrolüne bırak
+                hoverDesc.style.display = ''; 
             } else {
-                hoverDesc.style.display = 'none'; // Mobilde kapalı başlat
+                hoverDesc.style.display = 'none'; 
             }
         }
     });
