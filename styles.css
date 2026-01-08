@@ -1043,6 +1043,37 @@ section {
     color: var(--primary-dark);
     margin-bottom: 2rem;
 }
+/* Varsayılan siyah liste işaretini TAMAMEN kaldır */
+.about-text-large ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Safari / mobil için marker temizleme */
+.about-text-large ul li::marker {
+    content: "";
+}
+
+/* Yeşil tik */
+.about-text-large ul li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.about-text-large ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
 
 .about-text-large p {
     font-size: 1.1rem;
@@ -1682,5 +1713,23 @@ section {
     font-weight: bold;
 }
 
+@media (max-width: 768px) {
+    .cta-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-content .btn {
+        width: 100%;
+        max-width: 320px;
+        margin-bottom: 1rem; /* buton arası boşluk */
+        
+    }
+
+    .cta-content .btn:last-child {
+        margin-bottom: 0;
+    }
+}
 
 
