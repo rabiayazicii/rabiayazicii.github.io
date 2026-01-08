@@ -1637,7 +1637,7 @@ section {
         grid-template-columns: 1fr;
     }
     .info-card ul li::before {
-        content: "🌿"; 
+        content: "✓";
    
     }
 }
@@ -1662,20 +1662,25 @@ section {
     max-width: 100%;
 }
 .info-card ul {
-    list-style: none; 
+    list-style: none;
     padding-left: 0;
 }
 
 .info-card ul li {
     position: relative;
-    padding-left: 25px; 
-    margin-bottom: 8px;
+    padding-left: 1.6rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-light);
 }
 
 .info-card ul li::before {
-    content: "🌿"; 
+    content: "✓";
     position: absolute;
     left: 0;
+    top: 0.1rem;
+    color: var(--primary-color);
+    font-weight: bold;
 }
+
 
 
