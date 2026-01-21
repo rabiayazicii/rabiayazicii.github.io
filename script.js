@@ -189,3 +189,27 @@ window.addEventListener('resize', () => {
     });
 });
 
+function openModal(element) {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+    const videoSrc = element.querySelector("video").getAttribute("data-video");
+
+    modalVideo.src = videoSrc;
+    modal.classList.add("show");
+    modal.style.display = "flex";
+    modalVideo.play();
+}
+
+function closeModal() {
+    const modal = document.getElementById("videoModal");
+    const modalVideo = document.getElementById("modalVideo");
+
+    modalVideo.pause();
+    modalVideo.src = "";
+    modal.classList.remove("show");
+
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300);
+}
+

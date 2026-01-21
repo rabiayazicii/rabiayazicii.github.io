@@ -29,7 +29,7 @@
                     <li><a href="hakkimizda.html">Biz Kimiz</a></li>
                     <li><a href="meridyenterapi.html">Meridyen Terapi</a></li>
                     <li><a href="meridyen-terapi-cihazi.html">Cihaz ve Ücretsiz Eğitim</a></li>
-                    <li><a href="gorseller.html"  class="active" >Görseller</a></li>
+                    <li><a href="gorseller.html"  class="active" >Uygulamalarımız</a></li>
                     <li><a href="iletisim.html">Adres</a></li>
                    
 
@@ -49,7 +49,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Görseller</h1>
+            <h1>Uygulamalarımız</h1>
             <p>Meridyen terapi merkezimizden görüntüler</p>
         </div>
     </section>
@@ -63,33 +63,60 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item fade-in">
-                    <img src="görseller/main_img.webp" alt="Meridyen Terapi" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="görseller/radyofrekans.webp" alt="Meridyen Terapi" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/about_1.webp" alt="Meridyen Terapi Uygulaması" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="gallery-item fade-in" onclick="openModal(this)">
+                    <video 
+                        src="görseller/video1.mp4"
+                        data-video="görseller/video1.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    ></video>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/about_2.webp" alt="Rahatlama Alanı" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="gallery-item fade-in" onclick="openModal(this)">
+                    <video 
+                        src="görseller/video2.mp4"
+                        data-video="görseller/video2.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    ></video>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/hydrafacial.webp" alt="Hydrafacial" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="gallery-item fade-in" onclick="openModal(this)">
+                    <video 
+                        src="görseller/video3.mp4"
+                        data-video="görseller/video3.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    ></video>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/g5-masaji.webp" alt="G5 Masajı" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="gallery-item fade-in" onclick="openModal(this)">
+                    <video
+                        data-video="görseller/video4.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata"
+                    >
+                        <source src="görseller/video4.mp4" type="video/mp4">
+                    </video>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/anti-age-lifting.webp" alt="Anti-Age Lifting" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/bbglow-cilt-bakimi.webp" alt="BB Glow Cilt Bakımı" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/kavitasyon.webp" alt="Kavitasyon" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="gallery-item fade-in">
-                    <img src="görseller/radyofrekans.webp" alt="Radyofrekans" style="width: 100%; height: 100%; object-fit: cover;">
+                
+            </div>
+
+            <div id="videoModal" class="modal" onclick="closeModal()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <video id="modalVideo" controls autoplay></video>
+                    <span class="close" onclick="closeModal()">×</span>
                 </div>
             </div>
+            
         </div>
     </section>
 
@@ -121,7 +148,7 @@
                         <li><a href="hakkimizda.html">Biz Kimiz</a></li>
                         <li><a href="meridyenterapi.html">Meridyen Terapi</a></li>
                         <li><a href="meridyen-terapi-cihazi.html">Cihaz ve Ücretsiz Eğitim</a></li>
-                        <li><a href="gorseller.html">Görseller</a></li>
+                        <li><a href="gorseller.html">Uygulamalarımız</a></li>
                         <li><a href="iletisim.html">Adres</a></li>
                       
                     </ul>
