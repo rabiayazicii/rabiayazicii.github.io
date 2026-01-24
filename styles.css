@@ -746,7 +746,7 @@ section {
 
 .service-intro {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     color: var(--text-light);
     line-height: 1.8;
 }
@@ -879,6 +879,23 @@ section {
     overflow: hidden;
 }
 
+/* Meridyen terapi sayfası: başlık altı boşluğu kontrol et */
+.meridyen-intro {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .meridyen-intro {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .meridyen-intro + section.services-detail {
+        padding-top: 0rem;
+    }
+}
+
 .page-header::before {
     content: '';
     position: absolute;
@@ -886,7 +903,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('görseller/main_img.webp');
+    background-image: url('görseller/main_img.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -1030,6 +1047,17 @@ section {
 .about-section {
     background: var(--bg-white);
     padding: 5rem 0;
+}
+
+/* Hakkımızda: sol görsel yazıya göre biraz aşağı dursun */
+.about-page .about-image-large {
+    margin-top: 10rem;
+}
+
+@media (max-width: 968px) {
+    .about-page .about-image-large {
+        margin-top: 0;
+    }
 }
 
 .about-main {
@@ -1579,6 +1607,14 @@ section {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Ana sayfa: 3936547 görseli mobilde kırpılmasın, yazılar tam görünsün */
+    .about-preview-3936547 {
+        height: auto !important;
+        max-height: 75vh;
+        object-fit: contain !important;
+        background: var(--bg-pink);
+    }
     
     .whatsapp-buttons {
         bottom: 1rem;
@@ -1738,6 +1774,11 @@ section {
     object-fit: cover;
     cursor: pointer;
     border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover video {
+    transform: scale(1.05);
 }
 
 /* MODAL */
@@ -1747,7 +1788,8 @@ section {
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
-    z-index: 999;
+    /* Navbar (1000) üstünde kalsın ki modal tam ekran düzgün ortalansın */
+    z-index: 2000;
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -1763,6 +1805,9 @@ section {
     width: 85%;
     max-width: 900px;
     max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: scale(0.9);
     opacity: 0;
     transition: all 0.35s ease;
@@ -1793,7 +1838,7 @@ section {
     .modal-content {
         width: 94%;
         max-height: 85vh;
-        margin-top: 40px;
+        margin-top: 0;
         border-radius: 12px;
     }
 
@@ -1818,6 +1863,143 @@ section {
         align-items: center;
         justify-content: center;
         border-radius: 50%;
+    }
+}
+
+/* Customer Satisfaction Section */
+.customer-satisfaction-section {
+    background: var(--bg-pink);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.customer-satisfaction-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(10, 186, 181, 0.03) 0%, rgba(232, 245, 243, 0.05) 100%);
+    z-index: 0;
+}
+
+.customer-satisfaction-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.satisfaction-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.satisfaction-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-white);
+    /* Memnuniyet videoları genelde dikey olduğu için portrait oran */
+    aspect-ratio: 9 / 16;
+}
+
+.satisfaction-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.satisfaction-item .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.satisfaction-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.satisfaction-item:hover video {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.satisfaction-item:hover .play-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.play-overlay svg {
+    width: 80px;
+    height: 80px;
+    color: white;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.satisfaction-item:hover .play-overlay svg {
+    transform: scale(1);
+}
+
+/* Responsive for Customer Satisfaction */
+@media (max-width: 968px) {
+    .satisfaction-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .customer-satisfaction-section {
+        padding: 3rem 0;
+    }
+    
+    .satisfaction-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .satisfaction-item {
+        border-radius: 15px;
+    }
+    
+    .play-overlay svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .customer-satisfaction-section {
+        padding: 2.5rem 0;
+    }
+    
+    .satisfaction-grid {
+        gap: 1.25rem;
     }
 }
 
